@@ -1,0 +1,64 @@
+@import "@dasundev/livewire-dropzone-styles";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+
+
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.loader svg {
+    width: 100px; /* adjust the size of the loader */
+    height: 100px; /* adjust the size of the loader */
+}
+.loader::before , .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+}
+.loader::after{
+    border-color: #0066ff;
+    animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
+    inset: 6px;
+}
+
+@keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
+
+
+/* Hide the right-side actions while in fullscreen */
+#fullscreenContainer:fullscreen .flex.items-center.gap-2,
+#fullscreenContainer:fullscreen .flex.items-center.gap-2.sm\:gap-3 {
+    display: none !important;
+}
+
+:fullscreen .flex.items-center.gap-2,
+:fullscreen .flex.items-center.gap-2.sm\:gap-3 {
+    display: none !important;
+}
