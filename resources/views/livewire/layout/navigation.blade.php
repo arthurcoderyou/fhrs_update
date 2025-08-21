@@ -240,7 +240,7 @@ new class extends Component
                     </x-flowbite-nav-link>
                   </li> --}}
                   @auth
-                    @if(Auth::user()->can('setting edit') || Auth::user()->hasRole('Global Administrator'))
+                    @if(Auth::user()->can('setting list') || Auth::user()->hasRole('Global Administrator'))
                       <li>
                         <x-flowbite-dropdown-link :href="route('funeral_schedule.public.edit')" :active="request()->routeIs('funeral_schedule.public.edit')  " wire:navigate>
                           Edit FullScreen Schedule Display 
