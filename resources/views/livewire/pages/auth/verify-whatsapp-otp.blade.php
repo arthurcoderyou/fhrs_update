@@ -73,14 +73,14 @@ new #[Layout('layouts.guest')] class extends Component
         // code to send whatsapp notification 
         try {
             $params = [
-                'token' => '2adokm305iyvjkbj',
+                'token' => 'pssissc0mo0ul3vr',
                 'to' => $this->phone,
                 'body' => $message,
             ];
 
            $curl = curl_init();
                 curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://api.ultramsg.com/instance122258/messages/chat",
+                CURLOPT_URL => "https://api.ultramsg.com/instance140118/messages/chat",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
