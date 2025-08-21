@@ -176,14 +176,14 @@ class User extends Authenticatable implements MustVerifyEmail
         // code to send whatsapp notification 
         try {
             $params = [
-                'token' => 'a68ri4f54j0v3of2',
+                'token' => 'pssissc0mo0ul3vr',
                 'to' => $this->phone,
                 'body' => $message,
             ];
 
            $curl = curl_init();
                 curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://api.ultramsg.com/instance124793/messages/chat",
+                CURLOPT_URL => "https://api.ultramsg.com/instance140118/messages/chat",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
