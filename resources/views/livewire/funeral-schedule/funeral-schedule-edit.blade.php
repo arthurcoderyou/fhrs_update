@@ -552,10 +552,10 @@
                                                 
                                                 <div class="dz-flex dz-flex-wrap dz-gap-x-10 dz-gap-y-2 dz-justify-start dz-w-full">
                                                     @foreach ($project_documents as $attachment)
-                                                        <?php 
+                                                        @php
                                                         // $attachment_file = asset('storage/uploads/funeral_attachments/' . $attachment['attachment']);
                                                         $attachment_file = route('ftp.download', ['id' => $attachment['id']]); 
-                                                        ?>
+                                                        @endphp
 
 
 
