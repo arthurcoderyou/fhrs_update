@@ -61,10 +61,18 @@
 
         <script src="https://unpkg.com/libphonenumber-js@1.10.18/bundle/libphonenumber-js.min.js"></script>
 
+        <!-- browser installation-->
         <link rel="manifest" href="{{ asset('manifest.json') }}">
 
-        
+        <!-- mobile installation -->
+        <!-- Manifest + Theme -->
+        <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
+        <meta name="theme-color" content="#1e293b">
 
+        <!-- iOS support -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon" href="{{ asset('images/fhrs.png') }}">
 
         {{-- <script src="./assets/vendor/preline/dist/preline.js"></script> --}}
         <!-- Scripts -->
